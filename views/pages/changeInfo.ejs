@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/index.css" />
+    <title>Add Rectangle</title>
+</head>
+
+<body>
+    <%rows.forEach(function(r) {%>
+    <form action="/changeInfo/<%= r.id%>" method="POST" style="width: 90vw; margin: auto; margin-top: 2%;">
+        <fieldset>
+            <table>
+                <tr>
+                    <th>Name:</th>
+                    <td><input type="text" name="uname" placeholder="<%=r.name%>"></th>
+                </tr>
+                <tr>
+                    <th>Weight:</th>
+                    <td><input type="number" name="uweight" placeholder="<%=r.weight%> (lbs)" step = ".01"></td>
+                </tr>
+                <tr>
+                    <th>Height:</th>
+                    <td><input type="number" name="uheight" placeholder="<%=r.height%> (cm)" step = ".01"></td>
+                </tr>
+                <tr>
+                    <th>Hair Color:</th>
+                    <td><input type="text" name="uhair" placeholder="<%=r.hair%>"></td>
+                </tr>
+                <tr>
+                    <th>GPA:</th>
+                    <td><input type ="number" name = "ugpa" placeholder = "<%=r.gpa%>" step = ".01"></td>
+                </tr>
+            </table>
+            <p></p><input type="submit" class="submitBtn" value="Submit Changes">
+        </fieldset>
+    </form>
+
+    <form action="/" >
+        <input type="submit" value="Back to Index" class="returnBtn">
+    </form>
+    <% }); %>
+</body>
+
+</html>

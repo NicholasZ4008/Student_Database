@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Student</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/index.css" />
+</head>
+
+<body>
+    <h1 class = "header">Add Student</h1>
+    <form action="/addStudent" method="POST" style="width: 90vw; margin: auto; margin-top: 2%;">
+        <fieldset id = "addStudentForm">
+            <input type = "text" placeholder = "NAME" id = "name" name="uname">
+            <input type = "number" placeholder = "WEIGHT (lbs)" id = "weight" name = "uweight" step = ".01">
+            <input type = "number" placeholder = "HEIGHT (cm)" id = "height" name = "uheight" step = ".01">
+            <input type = "text" placeholder = "HAIR COLOR" id = "hair" name = "uhair">
+            <input type ="number" placeholder = "GPA" id = "gpa" name="ugpa" step = ".01">
+            <input type="submit" class = "submitBtn">
+        </fieldset>
+    </form>
+
+    <form action="/" method="GET">
+        <input type="submit" value="Back to index" class = "returnBtn">
+    </form>
+</body>
+</html>

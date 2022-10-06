@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="/stylesheets/index.css" />
+  <title>Students</title>
+</head>
+
+<body>
+  <h1 class= "header"> Student Database </h1>
+
+    <div id="table-container">
+      <table id="table">
+          <thead>
+          <tr>
+              <th>Name (click for info)</th>
+              <th>Weight(lbs)</th>
+              <th>Height(cm)</th>
+              <th>Hair Color</th>
+              <th>GPA</th>
+          </tr>
+          </thead>
+          
+          <tbody>  
+            <%rows.forEach(function(r) { %>
+                <tr class="rows">  
+                    <td>
+                      <a href="/student/<%= r.id%>" style="all:unset;">
+                        <h3 id = "namehref"><%= r.name%></h3> 
+                      </a> 
+                    </td>
+
+                    <td> <%= r.weight%></td>
+                    <td> <%= r.height%></td>
+                    <td> <%= r.hair%></td>
+                    <td> <%= r.gpa%></td>
+                </tr>
+            <% }); %>
+        </tbody>
+      </table>
+  </div>
+
+  <div id="buttons">
+    <form action="/addStudent">
+
+      <a href="/">
+        <input type="submit" value="Add Student" class="custom-button"/>
+      </a>
+    </form>
+
+    <form action = "/display" method = "GET">
+      <input type = "submit" value ="Display All Students" class = "custom-button">
+    </form>
+  </div>
+
+</body>
+</html>

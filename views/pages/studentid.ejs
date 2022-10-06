@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="/stylesheets/student.css" />
+</head>
+
+<body>
+  <%rows.forEach(function(r) {%>
+        
+    <div id="form">
+        <title><%= r.name%></title>
+        
+        <h1 id="title"><%= r.name%></h1>
+        <table id="properties">
+            
+        <thead>
+          <tr> <th></th> <th></th></tr>
+        </thead>
+
+        <tbody>
+          <tr class="property">
+            <td>Weight</td>
+            <td><%= r.weight%></td>
+          </tr>
+          <tr class="property">
+            <td>Height</td>
+            <td><%= r.height%></td>
+          </tr>
+          <tr class="property">
+            <td>Hair colour</td>
+            <td><%= r.hair%></td>
+          </tr>
+          <tr class="property">
+            <td>GPA</td>
+            <td><%= r.gpa%></td>
+          </tr>
+          <tr class="id">
+            <td>ID</td>
+            <td><%= r.id%></td>
+          </tr>
+
+        </tbody>
+      </table>
+
+      <div style="display: flex; flex-direction: row; width: 100%; margin:auto; margin-left: 10%; ">
+        <form action="/" method="GET" >
+          <input type="submit" value="Go Back to Index"
+          style=
+          "all:unset; 
+          padding: 1px; 
+          background-color: burlywood; 
+          border: 1px solid black; 
+          padding: 10px; 
+          font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;"/>
+        </form>
+
+        
+        <form action="/changeInfo/<%= r.id%>" >
+          <input type="submit" value="Change Info" style="all:unset; padding: 1px; background-color: lightblue; border: 1px solid black;padding: 10px; 
+          font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;"/>
+        </form>
+        
+        <form action="/deleteStudent/<%= r.id%>" method="POST" >
+          <input type="submit" value="Delete Student" style="all:unset; padding: 1px; background-color: salmon; border: 1px solid black;padding: 10px; 
+          font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;"/>
+        </form>
+
+      </div>
+    </div>
+  <% }); %>
+
+</body>
+
+
+</html>
